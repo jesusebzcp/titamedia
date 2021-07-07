@@ -10,8 +10,9 @@ const ListNavigation = () => {
 
   const handleMenu = (index) => {
     setLoading(true);
+    setMenuIndex(index);
+
     setTimeout(() => {
-      setMenuIndex(index);
       setLoading(false);
     }, 2000);
   };
