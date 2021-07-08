@@ -6,6 +6,8 @@ import IconDribbble from "./IconDribbble";
 import IconGooglePlus from "./IconGooglePlus";
 import IconTwitter from "./IconTwitter";
 import IconYoutube from "./IconYoutube";
+import IconMenu from "./IconMenu";
+import IconClose from "./IconClose";
 export {
   SearchIcon,
   IconGrid,
@@ -15,4 +17,6 @@ export {
   IconGooglePlus,
   IconTwitter,
   IconYoutube,
+  IconMenu,
+  IconClose,
 };

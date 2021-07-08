@@ -70,6 +70,9 @@ input {
   z-index: 99;
   background-color: #fff;
 }
+#navigation-container .content-button-menu {
+  display: none;
+}
 .containers_links {
   display: flex;
   align-items: center;
@@ -158,7 +161,7 @@ input {
   width: auto;
 }
 .img_product {
-  width: 150px;
+  width: 200px;
   height: auto;
   object-fit: fill;
   cursor: pointer;
@@ -238,4 +241,100 @@ input {
 }
 #footer-principal .col2 {
   margin-top: 2rem;
+}
+
+/* REPONSIVE DESING */
+@media only screen and (max-width: 768px) {
+  /* NAVBAR */
+  #navigation-container {
+    display: flex;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px !important;
+    height: 100px;
+    z-index: 99;
+    background-color: #fff;
+    right: 0;
+    left: 0;
+  }
+  #navigation-container .containers_links a {
+    display: none;
+  }
+  #navigation-container .logo_nav img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  #navigation-container .content-button-menu {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    z-index: 9;
+  }
+  #navigation-container .button_search svg {
+    width: 20px;
+    height: auto;
+  }
+  #navigation-container .button_search {
+    margin-right: 1rem;
+  }
+  .menu-responsive {
+    background-color: #fff;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  /* HERO */
+  #container-hero {
+    background-color: var(--primary-color);
+    height: 90vh;
+    width: 100%;
+  }
+  #container-hero .content-hero h2 {
+    color: #fff;
+    font-size: 39px;
+    text-align: center;
+  }
+  #content-pages {
+    margin-top: 50px;
+  }
+  .container {
+    margin: 0 5%;
+  }
+  .img_product {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    cursor: pointer;
+  }
+  /* MENU RESPONSIVE */
+  .header-menu-responsive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 20px;
+  }
+  .button-close {
+    background-color: transparent;
+    border: 0;
+  }
+  .container-links-responsive {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-links-responsive a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+    color: #000;
+  }
 }

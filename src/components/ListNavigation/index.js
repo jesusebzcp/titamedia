@@ -60,32 +60,32 @@ const ListNavigation = () => {
           })}
         </Element>
       </div>
-      <Container
-        className={"container-flex-products  justify-content-md-center"}
-      >
-        {loading ? (
-          <Loading />
-        ) : (
-          <Row>
-            {list.map(({ image_url, name }, index) => {
-              return (
-                <Col className={"item"} key={index}>
-                  <img src={image_url} alt={name} className={"img_product"} />
-                </Col>
-              );
-            })}
-          </Row>
-        )}
-        {list.length < 15 && (
-          <div className={"container-button-loader"}>
-            <button
-              className={"button-load-more"}
-              onClick={() => handleLoadMore()}
-            >
-              show me more
-            </button>
-          </div>
-        )}
+      <Container>
+        <div className={"container-flex-products  "}>
+          {loading ? (
+            <Loading />
+          ) : (
+            <Row className={"justify-content-md-center"}>
+              {list.map(({ image_url, name }, index) => {
+                return (
+                  <Col className={"item"} key={index} sm={2} md={3}>
+                    <img src={image_url} alt={name} className={"img_product"} />
+                  </Col>
+                );
+              })}
+            </Row>
+          )}
+          {list.length < 15 && (
+            <div className={"container-button-loader"}>
+              <button
+                className={"button-load-more"}
+                onClick={() => handleLoadMore()}
+              >
+                show me more
+              </button>
+            </div>
+          )}
+        </div>
       </Container>
     </Element>
   );
