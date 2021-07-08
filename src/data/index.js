@@ -1,6 +1,11 @@
 import {
   Item1,
   Item10,
+  Item11,
+  Item12,
+  Item13,
+  Item14,
+  Item15,
   Item2,
   Item3,
   Item4,
@@ -50,5 +55,27 @@ export const LIST_ITEMS = [
   {
     name: "Item 10",
     image_url: Item10,
+  },
+];
+export const EXTRA_DATA = [
+  {
+    image_url: Item11,
+    name: "Item 11",
+  },
+  {
+    image_url: Item12,
+    name: "Item 12",
+  },
+  {
+    image_url: Item13,
+    name: "Item 13",
+  },
+  {
+    image_url: Item14,
+    name: "Item 14",
+  },
+  {
+    image_url: Item15,
+    name: "Item 15",
   },
 ];

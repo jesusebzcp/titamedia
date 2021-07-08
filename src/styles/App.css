@@ -18,6 +18,7 @@
 
 :root {
   --primary-color: #ff5672;
+  --text-color: #c2cfd7;
 }
 html {
   box-sizing: border-box;
@@ -33,11 +34,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+span {
   font-family: Questrial;
 }
 p,
-span,
 ul,
 li,
 button,
@@ -169,6 +170,27 @@ input {
 .item {
   margin: 5px;
 }
+#container_list_navigation .container-button-loader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+#container_list_navigation .container-button-loader .button-load-more {
+  color: #fff;
+  background-color: var(--primary-color);
+  border: 0;
+  outline: none;
+  padding: 10px 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#container_list_navigation .container-button-loader .button-load-more:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-color: #fff;
+}
 /* LOADING */
 #container-loading {
   display: flex;
@@ -186,4 +208,34 @@ input {
 #container-loading .content-loading h2 {
   margin-top: 30px;
   font-size: 22px;
+}
+
+/* FOOTER */
+#footer-principal {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#footer-principal .col1 h4 {
+  font-size: 13px;
+  color: var(--text-color);
+}
+#footer-principal .col1 span {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+}
+#footer-principal .col2 a {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+#footer-principal .col2 a:hover > svg {
+  width: 16px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+#footer-principal .col2 {
+  margin-top: 2rem;
 }

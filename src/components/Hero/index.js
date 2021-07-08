@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Events, scrollSpy, animateScroll } from "react-scroll";
 
 const Hero = () => {
+  useEffect(() => {
+    Events.scrollEvent.register("begin", () => {});
+    Events.scrollEvent.register("end", () => {});
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
+
+  const handleAnimationScroll = () => {
+    animateScroll.scrollMore(700, {
+      duration: 1500,
+      delay: 100,
+      smooth: "easeInOutQuint",
+    });
+  };
   return (
     <div id={"container-hero"}>
       <div className={"content-hero"}>
@@ -11,7 +30,7 @@ const Hero = () => {
           Per quedsi accusata id, agam labores.
         </p>
         <div className={"container-button-hero"}>
-          <button>VIEW OUR WORK</button>
+          <button onClick={() => handleAnimationScroll()}>VIEW OUR WORK</button>
         </div>
       </div>
     </div>

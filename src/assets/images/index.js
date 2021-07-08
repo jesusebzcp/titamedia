@@ -9,6 +9,11 @@ import Item7 from "./item7.jpg";
 import Item8 from "./item8.jpg";
 import Item9 from "./item9.jpg";
 import Item10 from "./item10.jpg";
+import Item11 from "./item11.jpg";
+import Item12 from "./item12.jpg";
+import Item13 from "./item13.jpg";
+import Item14 from "./item14.jpg";
+import Item15 from "./item15.jpg";
 export {
   Logo,
   Item1,
@@ -21,4 +26,9 @@ export {
   Item8,
   Item9,
   Item10,
+  Item11,
+  Item12,
+  Item13,
+  Item14,
+  Item15,
 };

@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Element } from "react-scroll";
+
 import { IconGrid, IconList } from "../../assets/svg";
 import { LIST_LINKS } from "../../constants";
-import { LIST_ITEMS } from "../../data";
+import { LIST_ITEMS, EXTRA_DATA } from "../../data";
 import Loading from "../Loading";
 const ListNavigation = () => {
   const [menuIndex, setMenuIndex] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [list, setList] = useState(LIST_ITEMS);
 
   const handleMenu = (index) => {
+    setList(LIST_ITEMS);
     setLoading(true);
     setMenuIndex(index);
 
@@ -17,8 +21,20 @@ const ListNavigation = () => {
     }, 2000);
   };
 
+  const handleLoadMore = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setList(list.concat(EXTRA_DATA));
+      setLoading(false);
+    }, 2000);
+  };
+
   return (
-    <div id={"container_list_navigation"} className={"container"}>
+    <Element
+      id={"container_list_navigation"}
+      className={"container"}
+      name={"container_list_navigation"}
+    >
       <div className={"container_buttons_mode"}>
         <button>
           <IconGrid />
@@ -28,7 +44,7 @@ const ListNavigation = () => {
         </button>
       </div>
       <div>
-        <div className={"containers_links"}>
+        <Element className={"containers_links"} name={"containers_links"}>
           {LIST_LINKS.map(({ name }, index) => {
             return (
               <a
@@ -42,7 +58,7 @@ const ListNavigation = () => {
               </a>
             );
           })}
-        </div>
+        </Element>
       </div>
       <Container
         className={"container-flex-products  justify-content-md-center"}
@@ -51,7 +67,7 @@ const ListNavigation = () => {
           <Loading />
         ) : (
           <Row>
-            {LIST_ITEMS.map(({ image_url, name }, index) => {
+            {list.map(({ image_url, name }, index) => {
               return (
                 <Col className={"item"} key={index}>
                   <img src={image_url} alt={name} className={"img_product"} />
@@ -60,8 +76,18 @@ const ListNavigation = () => {
             })}
           </Row>
         )}
+        {list.length < 15 && (
+          <div className={"container-button-loader"}>
+            <button
+              className={"button-load-more"}
+              onClick={() => handleLoadMore()}
+            >
+              show me more
+            </button>
+          </div>
+        )}
       </Container>
-    </div>
+    </Element>
   );
 };
 
